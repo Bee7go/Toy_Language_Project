@@ -1,0 +1,681 @@
+---> Id <---
+1
+---> Stack <---
+int v; Ref int a; v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+Ref int a; v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+int v
+---> SymTable <---
+
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+Ref int a; v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+int v
+---> SymTable <---
+
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+Ref int a; v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+v=0
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+Ref int a; v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+v=0
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+Ref int a
+---> SymTable <---
+v=0
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+Ref int a
+---> SymTable <---
+v=0
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+a=(0,int)
+v=0
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+v = 10; HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+a=(0,int)
+v=0
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+v = 10
+---> SymTable <---
+a=(0,int)
+v=0
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+v = 10
+---> SymTable <---
+a=(0,int)
+v=0
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+a=(0,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+HeapAllocation(a, 22); fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+a=(0,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+HeapAllocation(a, 22)
+---> SymTable <---
+a=(0,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+HeapAllocation(a, 22)
+---> SymTable <---
+a=(0,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))); print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+print(v); print(HeapReading(a))
+fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a)))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+print(v); print(HeapReading(a))
+fork(HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a)))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+HeapWriting(a, 30); v = 32; print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+print(HeapReading(a))
+print(v)
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+v = 32; print(v); print(HeapReading(a))
+HeapWriting(a, 30)
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+print(HeapReading(a))
+print(v)
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+v = 32; print(v); print(HeapReading(a))
+HeapWriting(a, 30)
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+
+---> FileTable <---
+
+---> Heap <---
+1=22
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+10
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+v = 32; print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+10
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+10
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+v = 32; print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+10
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+1
+---> Stack <---
+
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+10
+30
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+print(v); print(HeapReading(a))
+v = 32
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+10
+30
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+print(v); print(HeapReading(a))
+v = 32
+---> SymTable <---
+a=(1,int)
+v=10
+---> Out <---
+10
+30
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=32
+---> Out <---
+10
+30
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+print(v); print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=32
+---> Out <---
+10
+30
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+print(HeapReading(a))
+print(v)
+---> SymTable <---
+a=(1,int)
+v=32
+---> Out <---
+10
+30
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+print(HeapReading(a))
+print(v)
+---> SymTable <---
+a=(1,int)
+v=32
+---> Out <---
+10
+30
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=32
+---> Out <---
+10
+30
+32
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+print(HeapReading(a))
+---> SymTable <---
+a=(1,int)
+v=32
+---> Out <---
+10
+30
+32
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
+---> Id <---
+2
+---> Stack <---
+
+---> SymTable <---
+a=(1,int)
+v=32
+---> Out <---
+10
+30
+32
+30
+---> FileTable <---
+
+---> Heap <---
+1=30
+
+* * * * * * * * * *
+
