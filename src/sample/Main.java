@@ -25,6 +25,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -49,6 +50,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
+
+        //Initial Window
         primaryStage.setTitle("List of possible programs");
 
         ListView listView = new ListView();
@@ -87,6 +90,7 @@ public class Main extends Application {
         }
 
 
+        //Opening main window
         button.setOnAction(event -> {
             ObservableList selectedIndices = listView.getSelectionModel().getSelectedIndices();
             IStmt selectedProgram;
@@ -131,17 +135,24 @@ public class Main extends Application {
             AtomicReference<List<PrgState>> prgList= new AtomicReference<>(ctr1.removeCompletedPrg(repo1.getPrgList()));
 
 
-
+            //Initializing text fields, tables, labels etc. and SETUP styles
             // a) nr PrgStates
             TextField nrPrgStates = new TextField();
-            //
+            nrPrgStates.setStyle("-fx-font-size: 17px; "  +
+                    "-fx-font-family: 'Segoe UI Black';");
+
 
             // b) Heap Table
             Label labelHeap = new Label("Heap Table");
-            labelHeap.setFont(new Font("Rockwell", 15));
+            labelHeap.setFont(new Font("Rockwell", 18));
+            labelHeap.setTextFill(Color.WHITE);
             labelHeap.setMaxWidth(Double.MAX_VALUE);
             labelHeap.setAlignment(Pos.CENTER);
             TableView<KeyValue> Heaptable = new TableView<KeyValue>();
+            Heaptable.setStyle("-fx-font-size: 17px; "  +
+                    "-fx-control-inner-background: #FCF3CF ;\n" +
+                    "-fx-control-inner-background-alt: derive(-fx-control-inner-background, 40%); " +
+                    "-fx-font-family: 'Segoe UI Black';");
             ObservableList<KeyValue> data = FXCollections.observableArrayList();
             Heaptable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
             Heaptable.setMaxWidth(Double.MAX_VALUE);
@@ -159,29 +170,46 @@ public class Main extends Application {
 
             // c) Out list
             Label labelOut = new Label("Out Table");
-            labelOut.setFont(new Font("Rockwell", 15));
+            labelOut.setFont(new Font("Rockwell", 18));
+            labelOut.setTextFill(Color.WHITE);
             labelOut.setMaxWidth(Double.MAX_VALUE);
             labelOut.setAlignment(Pos.CENTER);
             ListView<String> listOut = new ListView<String>();
             listOut.setMaxWidth(Double.MAX_VALUE);
+            listOut.setStyle("-fx-font-size: 17px; "  +
+                    "-fx-control-inner-background: #DCFFD7 ;\n" +
+                    "-fx-control-inner-background-alt: derive(-fx-control-inner-background, 40%); " +
+                    "-fx-font-family: 'Segoe UI Black';");
+
+
             ObservableList<String> itemsOut = FXCollections.observableArrayList ();
 
             // d) FileTable list
             Label labelFile = new Label("File Table");
-            labelFile.setFont(new Font("Rockwell", 15));
+            labelFile.setFont(new Font("Rockwell", 18));
+            labelFile.setTextFill(Color.WHITE);
             labelFile.setMaxWidth(Double.MAX_VALUE);
             labelFile.setAlignment(Pos.CENTER);
             ListView<String> listFile = new ListView<String>();
+            listFile.setStyle("-fx-font-size: 17px; "  +
+                    "-fx-control-inner-background: #EBDEF0  ;\n" +
+                    "-fx-control-inner-background-alt: derive(-fx-control-inner-background, 40%); " +
+                    "-fx-font-family: 'Segoe UI Black';");
             listFile.setMaxWidth(Double.MAX_VALUE);
             ObservableList<String> itemsFile = FXCollections.observableArrayList ();
 
             // (e) the list of PrgState identifiers as a ListView
             Label labelIdPrgState = new Label("PrgState identifiers");
-            labelIdPrgState.setFont(new Font("Rockwell", 15));
+            labelIdPrgState.setFont(new Font("Rockwell", 18));
+            labelIdPrgState.setTextFill(Color.WHITE);
             labelIdPrgState.setMaxWidth(Double.MAX_VALUE);
             labelIdPrgState.setAlignment(Pos.CENTER);
 
             ListView<String> listIdPrgState = new ListView<String>();
+            listIdPrgState.setStyle("-fx-font-size: 17px; "  +
+                    "-fx-control-inner-background: B2E0FF ;\n" +
+                    "-fx-control-inner-background-alt: derive(-fx-control-inner-background, 80%); " +
+                    "-fx-font-family: 'Segoe UI Black';");
             listIdPrgState.setMaxWidth(Double.MAX_VALUE);
 
             ObservableList<String> itemsIdPrgState = FXCollections.observableArrayList ();
@@ -190,13 +218,17 @@ public class Main extends Application {
             // f) SymTable
 
             Label labelSymTable = new Label("Sym Table");
-            labelSymTable.setFont(new Font("Rockwell", 15));
+            labelSymTable.setFont(new Font("Rockwell", 18));
+            labelSymTable.setTextFill(Color.WHITE);
             labelSymTable.setMaxWidth(Double.MAX_VALUE);
             labelSymTable.setAlignment(Pos.CENTER);
 
 
             TableView<VariableValue> SymTable = new TableView<VariableValue>();
-            //SymTable.setMaxWidth(Region.USE_PREF_SIZE);
+            SymTable.setStyle("-fx-font-size: 17px; "  +
+                    "-fx-control-inner-background: #CFFFFA   ;\n" +
+                    "-fx-control-inner-background-alt: derive(-fx-control-inner-background, 40%); " +
+                    "-fx-font-family: 'Segoe UI Black';");
             SymTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
             SymTable.setMaxWidth(Double.MAX_VALUE);
             ObservableList<VariableValue> data2 = FXCollections.observableArrayList();
@@ -214,10 +246,15 @@ public class Main extends Application {
 
             // g) ExeStack
             Label labelExeStack = new Label("ExeStack");
-            labelExeStack.setFont(new Font("Rockwell", 15));
+            labelExeStack.setFont(new Font("Rockwell", 18));
             labelExeStack.setMaxWidth(Double.MAX_VALUE);
             labelExeStack.setAlignment(Pos.CENTER);
+            labelExeStack.setTextFill(Color.WHITE);
             ListView<String> listExeStack = new ListView<String>();
+            listExeStack.setStyle("-fx-font-size: 17px; "  +
+                    "-fx-control-inner-background: #FFBCBC  ;\n" +
+                    "-fx-control-inner-background-alt: derive(-fx-control-inner-background, 40%); " +
+                    "-fx-font-family: 'Segoe UI Black';");
             ObservableList<String> itemsExeStack = FXCollections.observableArrayList ();
             listExeStack.setMaxWidth(Double.MAX_VALUE);
 
@@ -319,10 +356,12 @@ public class Main extends Application {
             HBox aux1 = new HBox(15);
             HBox.setHgrow(HeapBox, Priority.ALWAYS);
             HBox.setHgrow(SymBox, Priority.ALWAYS);
+            HBox.setHgrow(FileBox, Priority.ALWAYS);
             HBox.setHgrow(ExeStackBox, Priority.ALWAYS);
             HeapBox.setMaxWidth(Double.MAX_VALUE);
             SymBox.setMaxWidth(Double.MAX_VALUE);
             ExeStackBox.setMaxWidth(Double.MAX_VALUE);
+            FileBox.setMaxWidth(Double.MAX_VALUE);
 
 
             VBox OutBox = new VBox(labelOut,listOut);
@@ -333,11 +372,12 @@ public class Main extends Application {
             OutBox.setMaxWidth(Double.MAX_VALUE);
             PrgStateBox.setMaxWidth(Double.MAX_VALUE);
 
-            aux1.getChildren().addAll(HeapBox, SymBox,FileBox);
-            aux2.getChildren().addAll(OutBox, PrgStateBox);
+            aux1.getChildren().addAll(HeapBox,FileBox,PrgStateBox);
+            aux2.getChildren().addAll(OutBox, SymBox);
 
             VBox mainVBox = new VBox(nrPrgStates, aux1, aux2, ExeStackBox, RunStep);
             mainVBox.setSpacing(15);
+            mainVBox.setStyle("-fx-background-color: #006494 ;");
             Stage anotherstage = new Stage();
             anotherstage.setTitle("Main Window");
             anotherstage.setScene(new Scene(mainVBox, 1200, 500));
@@ -348,8 +388,9 @@ public class Main extends Application {
         VBox vBox = new VBox(listView, button);
         vBox.setSpacing(15);
         vBox.setAlignment(Pos.CENTER);
-
+        vBox.setStyle("-fx-background-color: #21618C ;");
         Scene scene = new Scene(vBox, 1300, 400);
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }
