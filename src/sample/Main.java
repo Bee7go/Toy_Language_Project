@@ -1,55 +1,45 @@
 package sample;
 
+import Controller.Controller;
 import Model.ADT.*;
 import Model.PrgState;
 import Model.Statements.IStmt;
-import Model.Value.IntValue;
 import Model.Value.StringValue;
 import Model.Value.Value;
 import Repository.IRepo;
 import Repository.Repo;
 import View.Interpreter;
 import javafx.application.Application;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import Controller.Controller;
-import javafx.util.Pair;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
-
 //Toy Language Project
 //Badaruta Bianca
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-
+    public void start(Stage primaryStage) throws FileNotFoundException {
 
         //Initial Window
         primaryStage.setTitle("List of possible programs");
@@ -63,7 +53,6 @@ public class Main extends Application {
 
         Interpreter x = new Interpreter();
 
-
         listView.getItems().add(x.ex1().toString());
         listView.getItems().add(x.ex2().toString());
         listView.getItems().add(x.ex3().toString());
@@ -76,53 +65,32 @@ public class Main extends Application {
         listView.getItems().add(x.ex10().toString());
 
 
+
         Button button = new Button("Select Program");
+
         button.setStyle("-fx-color: #FF645A; -fx-margins: 15px;");
         button.setFont(Font.font ("Comic Sans MS", 17));
+        button.setOnMouseEntered(e -> button.setStyle("-fx-color: #DF4952;"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-color: #FF645A;"));
 
-        List<String> fontFamilies = Font.getFamilies();
-        List<String> fontNames    = Font.getFontNames();
-        for(String item : fontFamilies) {
-            System.out.println(item);
-        }
-        for(String item : fontNames) {
-            System.out.println(item);
-        }
 
 
         //Opening main window
         button.setOnAction(event -> {
             ObservableList selectedIndices = listView.getSelectionModel().getSelectedIndices();
             IStmt selectedProgram;
-            if ((int)selectedIndices.get(0) == 0) {
-                selectedProgram =  x.ex1();
-            }
-            else if ((int)selectedIndices.get(0) == 1) {
-                selectedProgram =  x.ex2();
-            }
-            else if ((int)selectedIndices.get(0) == 2) {
-                selectedProgram =  x.ex3();
-            }
-            else if ((int)selectedIndices.get(0) == 3) {
-                selectedProgram =  x.ex4();
-            }
-            else if ((int)selectedIndices.get(0) == 4) {
-                selectedProgram =  x.ex5();
-            }
-            else if ((int)selectedIndices.get(0) == 5) {
-                selectedProgram =  x.ex6();
-            }
-            else if ((int)selectedIndices.get(0) == 6) {
-                selectedProgram =  x.ex7();
-            }
-            else if ((int)selectedIndices.get(0) == 7) {
-                selectedProgram =  x.ex8();
-            }
-            else if ((int)selectedIndices.get(0) == 8) {
-                selectedProgram =  x.ex9();
-            }
-            else {
-                selectedProgram =  x.ex10();
+            int selectedIndex = (int)selectedIndices.get(0);
+            switch(selectedIndex){
+                case 0:selectedProgram =  x.ex1();break;
+                case 1:selectedProgram =  x.ex2();break;
+                case 2:selectedProgram =  x.ex3();break;
+                case 3:selectedProgram =  x.ex4();break;
+                case 4:selectedProgram =  x.ex5();break;
+                case 5:selectedProgram =  x.ex6();break;
+                case 6:selectedProgram =  x.ex7();break;
+                case 7:selectedProgram =  x.ex8();break;
+                case 8:selectedProgram =  x.ex9();break;
+                default:selectedProgram =  x.ex10();
             }
 
 
@@ -262,6 +230,10 @@ public class Main extends Application {
             // h) Run one step
 
             Button RunStep = new Button("Run One Step");
+            RunStep.setStyle("-fx-color: #FF645A;");
+            RunStep.setFont(Font.font ("Comic Sans MS", 17));
+            RunStep.setOnMouseEntered(e -> RunStep.setStyle("-fx-color: #DF4952;"));
+            RunStep.setOnMouseExited(e -> RunStep.setStyle("-fx-color: #FF645A;"));
 
                 RunStep.setOnAction(runStep -> {
                     if(prgList.get().size() > 0) {
@@ -302,15 +274,13 @@ public class Main extends Application {
                             for (PrgState i : repo1.getPrgList())
                                 itemsIdPrgState.add(String.valueOf(i.getId()));
                             listIdPrgState.setItems(itemsIdPrgState);
-                           // listIdPrgState.getSelectionModel().selectFirst();
+                            listIdPrgState.getSelectionModel().selectFirst(); //select first element from the list by default
 
                             //---> get selected item
                             listIdPrgState.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
                                 @Override
                                 public void handle(MouseEvent event) {
-
-                                    System.out.println("clicked on " + listIdPrgState.getSelectionModel().getSelectedItem());
 
                                     for (PrgState i : repo1.getPrgList()) {
                                         if (String.valueOf(i.getId()).equals(listIdPrgState.getSelectionModel().getSelectedItem())) {
@@ -333,6 +303,13 @@ public class Main extends Application {
 
                                 }
                             });
+
+                            //update ExeStack with the data corresponding to the first id
+                            itemsExeStack.clear();
+                            for (IStmt j: repo1.getPrgList().get(0).getStk().getContent())
+                                itemsExeStack.add(String.valueOf(j));
+                            listExeStack.setItems(itemsExeStack);
+
 
                             prgList.set(ctr1.removeCompletedPrg(repo1.getPrgList()));
                         } catch (InterruptedException e) {
@@ -377,10 +354,17 @@ public class Main extends Application {
 
             VBox mainVBox = new VBox(nrPrgStates, aux1, aux2, ExeStackBox, RunStep);
             mainVBox.setSpacing(15);
+            mainVBox.setMargin(nrPrgStates, new Insets(30, 0, 0, 40));
+            mainVBox.setMargin(aux1, new Insets(0, 40, 0, 40));
+            mainVBox.setMargin(aux2, new Insets(0, 40, 0, 40));
+            mainVBox.setMargin(ExeStackBox, new Insets(0, 40, 0, 40));
+            mainVBox.setMargin(RunStep, new Insets(10, 10, 40, 40));
+
+
             mainVBox.setStyle("-fx-background-color: #006494 ;");
             Stage anotherstage = new Stage();
             anotherstage.setTitle("Main Window");
-            anotherstage.setScene(new Scene(mainVBox, 1200, 500));
+            anotherstage.setScene(new Scene(mainVBox, 1350, 700));
             anotherstage.show();
         });
 
